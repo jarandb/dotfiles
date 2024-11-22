@@ -5,7 +5,7 @@ sudo yabai --load-sa
 # global settings
 yabai -m config                                 \
     external_bar                 all:40:0       \
-    menubar_opacity              0.0            \
+    menubar_opacity              1.0            \
     mouse_follows_focus          off            \
     focus_follows_mouse          off            \
     display_arrangement_order    default        \
@@ -36,4 +36,18 @@ yabai -m config                                 \
 
 borders active_color=0xfff5a97f inactive_color=0xfff4dbd6 width=5.0 &
 
+# space settings
+yabai -m space 1 --label terminal
+yabai -m space 2 --label web
+yabai -m space 3 --label social
+yabai -m space 4 --label mail
+yabai -m space 5 --label media
+
+# window rules
+yabai -m rule --add app="^Mail$" space=mail
+yabai -m rule --add app="^WezTerm$" space=Terminal
+yabai -m rule --add app="^Google Chrome$" space=web
+yabai -m rule --add app="^Mail$" space=mail
+yabai -m rule --add app="^Mail$" space=mail
+yabai -m rule --add app="^WezTerm$" space=music
 echo "yabai configuration loaded.."

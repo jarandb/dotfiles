@@ -10,6 +10,7 @@ return {
 	config = function()
 		vim.keymap.set("n", "<leader>nt", "<Cmd>Neotree toggle<CR>")
 		require("neo-tree").setup({
+			window = { position = "float" },
 			filesystem = {
 				follow_current_file = { enabled = true },
 			},
