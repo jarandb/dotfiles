@@ -32,7 +32,7 @@ summary = "{track} • {artists}"
 body = "{album}"
 
 [layout]
-playback_window_position = "Top"
+playback_window_position = "Bottom"
 playback_window_height = 6
 
 [layout.library]
@@ -40,10 +40,10 @@ playlist_percent = 40
 album_percent = 40
 
 [device]
-name = "spotify-player"
+name = "Spotify TUI"
 device_type = "speaker"
-volume = 70
+volume = 100
 bitrate = 320
 audio_cache = false
 normalization = false
-autoplay = false
+autoplay = true
