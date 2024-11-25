@@ -1,8 +1,6 @@
 # open terminal
 cmd - return : open -n -a "Wezterm"
 
-alt - return : yabai -m window $(yabai -m query --windows | jq -r '.[] | select(.app=="Wezterm" and .is-floating==true) | .id') --toggle min
-
 # open chrome 
 cmd + shift - return : open -n -a "Google Chrome" 
 
