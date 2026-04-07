@@ -1,4 +1,27 @@
 # --------------------------------------------------
+# Environment
+# --------------------------------------------------
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# --------------------------------------------------
+# History
+# --------------------------------------------------
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE="$HOME/.zsh_history"
+setopt HIST_IGNORE_ALL_DUPS  # no duplicate entries
+setopt HIST_SAVE_NO_DUPS     # don't save duplicates
+setopt HIST_FIND_NO_DUPS     # skip dupes when searching
+setopt SHARE_HISTORY         # share history across sessions
+setopt INC_APPEND_HISTORY    # write immediately, not on exit
+
+# --------------------------------------------------
 # Oh My Zsh
 # --------------------------------------------------
 export ZSH="$HOME/.oh-my-zsh"
@@ -106,11 +129,13 @@ alias yd="yarn dev"
 alias c="clear"
 alias v="nvim"
 alias vim="nvim"
-alias ls="ls --color=auto"
-alias ll="ls -la"
+alias lg="lazygit"
+alias ls="eza --icons --group-directories-first"
+alias ll="eza --icons --group-directories-first -la"
+alias lt="eza --icons --tree --level=2"
+alias cat="bat --style=auto"
 alias ..="cd .."
 alias ...="cd ../.."
-alias cat="cat -n"
 
 # --------------------------------------------------
 # PATH
