@@ -28,8 +28,10 @@ echo "📦 Installing formulae..."
 formulae=(
   neovim
   stow
+  starship
   zoxide
-  nvm
+  zsh-autosuggestions
+  zsh-syntax-highlighting
   spotify_player
 )
 
@@ -71,11 +73,15 @@ else
 fi
 
 # --------------------------------------------------
-# 5. NVM directory
+# 5. NVM (installed via curl, not brew)
 # --------------------------------------------------
 if [ ! -d "$HOME/.nvm" ]; then
-  echo "📁 Creating NVM directory..."
-  mkdir -p "$HOME/.nvm"
+  echo "📦 Installing NVM..."
+  export NVM_DIR="$HOME/.nvm"
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+else
+  echo "✅ NVM already installed"
 fi
 
 # --------------------------------------------------
