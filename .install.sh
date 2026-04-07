@@ -22,51 +22,13 @@ else
 fi
 
 # --------------------------------------------------
-# 2. Formulae
+# 2. Homebrew packages (via Brewfile)
 # --------------------------------------------------
-echo "📦 Installing formulae..."
-formulae=(
-  neovim
-  stow
-  starship
-  zoxide
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  fd
-  ripgrep
-  fzf
-  spotify_player
-)
-
-for pkg in "${formulae[@]}"; do
-  if brew list "$pkg" &>/dev/null; then
-    echo "  ✅ $pkg already installed"
-  else
-    echo "  📦 Installing $pkg..."
-    brew install "$pkg"
-  fi
-done
+echo "📦 Installing Homebrew packages..."
+brew bundle --file="$DOTFILES_DIR/Brewfile" --no-lock
 
 # --------------------------------------------------
-# 3. Casks
-# --------------------------------------------------
-echo "📦 Installing casks..."
-casks=(
-  ghostty
-  font-fira-code-nerd-font
-)
-
-for cask in "${casks[@]}"; do
-  if brew list --cask "$cask" &>/dev/null; then
-    echo "  ✅ $cask already installed"
-  else
-    echo "  📦 Installing $cask..."
-    brew install --cask "$cask"
-  fi
-done
-
-# --------------------------------------------------
-# 4. Oh My Zsh
+# 3. Oh My Zsh
 # --------------------------------------------------
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "🐚 Installing Oh My Zsh..."
@@ -76,7 +38,7 @@ else
 fi
 
 # --------------------------------------------------
-# 5. NVM (installed via curl, not brew)
+# 4. NVM (installed via curl, not brew)
 # --------------------------------------------------
 if [ ! -d "$HOME/.nvm" ]; then
   echo "📦 Installing NVM..."
@@ -88,12 +50,13 @@ else
 fi
 
 # --------------------------------------------------
-# 6. Stow configs
+# 5. Stow configs
 # --------------------------------------------------
 echo "🔗 Stowing configs..."
 cd "$DOTFILES_DIR"
 
 packages=(
+  git
   nvim
   zsh
   starship
