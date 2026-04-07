@@ -99,7 +99,7 @@ packages=(
 for pkg in "${packages[@]}"; do
   if [ -d "$pkg" ]; then
     echo "  🔗 Stowing $pkg..."
-    stow --restow "$pkg"
+    stow --restow --target="$HOME" "$pkg"
   else
     echo "  ⚠️  Skipping $pkg (directory not found)"
   fi
