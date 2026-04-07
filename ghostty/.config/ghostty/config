@@ -1,0 +1,8 @@
+theme = Catppuccin Macchiato
+font-family = FiraCode Nerd Font
+font-size = 14
+window-padding-x = 8
+window-padding-y = 8
+window-decoration = false
+background-opacity = 0.8
+macos-titlebar-style = hidden

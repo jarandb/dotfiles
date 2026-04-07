@@ -2,11 +2,20 @@ return {
   -- Disable the default tokyonight that ships with LazyVim
   { "folke/tokyonight.nvim", enabled = false },
 
-  -- Use our local Foxaccia Glade colorscheme
+  -- Catppuccin Macchiato
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      flavour = "macchiato",
+    },
+  },
+
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "foxaccia-glade",
+      colorscheme = "catppuccin",
     },
   },
 }

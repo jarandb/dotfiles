@@ -32,6 +32,9 @@ formulae=(
   zoxide
   zsh-autosuggestions
   zsh-syntax-highlighting
+  fd
+  ripgrep
+  fzf
   spotify_player
 )
 
@@ -93,6 +96,8 @@ cd "$DOTFILES_DIR"
 packages=(
   nvim
   zsh
+  starship
+  ghostty
   spotify-player
 )
 

@@ -31,6 +31,10 @@ fi
 # --------------------------------------------------
 # Zoxide (smarter cd)
 eval "$(zoxide init zsh)"
+alias cd="z"
+
+# fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # NVM (installed via curl, not brew)
 export NVM_DIR="$HOME/.nvm"
