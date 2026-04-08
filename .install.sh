@@ -25,7 +25,7 @@ fi
 # 2. Homebrew packages (via Brewfile)
 # --------------------------------------------------
 echo "📦 Installing Homebrew packages..."
-brew bundle --file="$DOTFILES_DIR/Brewfile" --no-lock
+brew bundle --file="$DOTFILES_DIR/Brewfile"
 
 # --------------------------------------------------
 # 3. Oh My Zsh
